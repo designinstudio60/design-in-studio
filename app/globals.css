@@ -1,6 +1,75 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+
+
+
+
+
+:root {
+  --max-width: 1440px; /* Full width */
+  --section-width: 1280px; /* Section width */
+  --bg-color: #121212; /* Background color */
+}
+
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section {
+  max-width: var(--section-width);
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 1rem; Adjust padding as needed */
+}
 
 body {
- @apply bg-amber-400
+  background-color: var(--bg-color);
+}
+.bg-signup-gradient {
+  background: linear-gradient(90deg, #37F4F4 0%, #FBD200 100%);
+}
+
+
+/* Import Helvetica Neue fonts */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/HelveticaNeueItalic.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/HelveticaNeueMediumItalic.otf') format('opentype');
+  font-weight: 500; /* Medium */
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Add other font weights as needed */
+
+/* Apply Helvetica Neue globally with default font weight */
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400; /* Set default font weight to Regular (400) */
 }

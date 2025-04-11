@@ -114,9 +114,12 @@ export default function Navbar() {
               Login
             </Link>
             <Link href="/signup">
-              <button className="bg-signup-gradient text-[#1E1E1E] text-sm px-4 py-2 rounded-[2px] hover:opacity-90  mt-2">
+              {/* <button className="bg-signup-gradient text-[#1E1E1E] text-sm px-4 py-2 rounded-[2px] hover:opacity-90  mt-2">
                 Signup
-              </button>
+              </button> */}
+  <button className="w-20 h-8 px-8 py-2 text-sm leading-5 bg-signup-gradient  text-[#1E1E1E] rounded-[2px] ver:opacity-90  mt-2">
+  Signup
+</button>
             </Link>
           </div>
         </div>

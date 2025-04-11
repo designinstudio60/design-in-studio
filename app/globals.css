@@ -29,7 +29,8 @@ body {
   background-color: var(--bg-color);
 }
 .bg-signup-gradient {
-  background: linear-gradient(90deg, #37F4F4 0%, #FBD200 100%);
+  background: linear-gradient(90deg, #1BFFF3 0%, #AEFFAE 100%);
+ 
 }
 
 
@@ -71,5 +72,5 @@ body {
 /* Apply Helvetica Neue globally with default font weight */
 body {
   font-family: 'Helvetica Neue', sans-serif;
-  font-weight: 400; /* Set default font weight to Regular (400) */
+  font-weight: 200; /* Set default font weight to Regular (400) */
 }

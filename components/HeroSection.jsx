@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="text-white mb-4 font-bold text-left w-full text-[60px] leading-[72px] tracking-[-0.02em]">
         Design your vision{" "}
         <span className="inline-block">
-          <span className="bg-gradient-to-r from-[#AEFFAE] to-[#1BFFF3] bg-clip-text text-transparent">
+          <span className="heading-grediant">
             shaping your
           </span>{" "}
           future
@@ -16,9 +16,9 @@ export default function HeroSection() {
       </div>
 
       {/* Paragraph - changed from font-thin to font-normal */}
-      <div className="text-white font-normal mx-auto text-center mt-10 w-[754px] h-11 text-xl leading-[1.4]">
+      <p className="text-white  mx-auto text-center mt-10 w-[754px] h-11 text-xl leading-[1.4]">
         Turn ideas into outstanding designs with high quality vectors photos videos mockups and more
-      </div>
+      </p>
 
       {/* Rest of the component remains unchanged */}
       <div className="flex items-center bg-[#1D1D1D] rounded-md overflow-hidden border border-[#939393] mt-28 w-[1024px] h-16">

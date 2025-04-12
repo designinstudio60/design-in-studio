@@ -32,7 +32,11 @@ body {
   background: linear-gradient(90deg, #1BFFF3 0%, #AEFFAE 100%);
  
 }
-
+.heading-grediant {
+  background: linear-gradient(to right, #AEFFAE, #1BFFF3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* Import Helvetica Neue fonts */
 @font-face {
@@ -77,19 +81,22 @@ body {
 
 
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 15s linear infinite;
+  }
+
+  .paused {
+    animation-play-state: paused !important;
+  }
 }
-@keyframes marquee2 {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(0); }
-}
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-  will-change: transform;
-}
-.animate-marquee2 {
-  animation: marquee2 40s linear infinite;
-  will-change: transform;
-}
+

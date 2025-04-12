@@ -1,11 +1,13 @@
 
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import ServicesSection from '@/components/ServicesSection';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Full width container */}
+      
       <div className="container">
         {/* Section with custom width */}
         
@@ -17,7 +19,9 @@ export default function Home() {
 
           
         </section>
+        
       </div>
+      <ServicesSection />
       
     </div>
   );

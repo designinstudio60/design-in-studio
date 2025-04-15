@@ -3,9 +3,9 @@ import { Search } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="mx-auto flex flex-col mt-28 w-[1072px] font-['Helvetica_Neue']">
+    <section className="mx-40 flex flex-col mt-14 p-6  w-268 font-['Helvetica_Neue']">
       {/* Heading with gradient */}
-      <div className="text-white mb-4 font-bold text-left w-full text-[60px] leading-[72px] tracking-[-0.02em]">
+      <div className="text-white mb-4 font-bold text-left w-full text-6xl  tracking-[-0.02em]">
         Design your vision{" "}
         <span className="inline-block">
           <span className="heading-grediant">
@@ -16,12 +16,12 @@ export default function HeroSection() {
       </div>
 
       {/* Paragraph - changed from font-thin to font-normal */}
-      <p className="text-white  mx-auto text-center mt-10 w-[754px] h-11 text-xl leading-[1.4]">
+      <p className="text-white  mx-auto text-center mt-3 w-[754px] h-11 text-xl leading-[1.4]">
         Turn ideas into outstanding designs with high quality vectors photos videos mockups and more
       </p>
 
       {/* Rest of the component remains unchanged */}
-      <div className="flex items-center bg-[#1D1D1D] rounded-md overflow-hidden border border-[#939393] mt-28 w-[1024px] h-16">
+      <div className="flex items-center bg-[#1D1D1D] rounded-md overflow-hidden border border-[#939393] mt-27 w-5x h-16">
         {/* Asset Selector */}
         <div className="flex items-center justify-between border-r border-[#939393] w-[171px] h-full px-3">
           <img src="/assets.svg" alt="Asset Type" className="w-[25px] h-[22px]" />
@@ -50,7 +50,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
-
-
-

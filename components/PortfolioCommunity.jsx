@@ -49,7 +49,8 @@ import React from "react";
 
 export default function PortfolioCommunity() {
   return (
-    <section className="max-w-7xl mx-auto rounded-3xl flex flex-col lg:flex-row items-center justify-between px-6 sm:px-8 md:px-10 py-8 relative overflow-hidden mt-16 md:mt-20 lg:mt-28 h-auto lg:h-80">
+    <div className="w-full px-19 py-10">
+    <section className="max-w-7xl mx-auto rounded-3xl flex flex-col lg:flex-row items-center justify-between px-16 sm:px-8 md:px-10 py-8 relative overflow-hidden mt-20">
       {/* Background Glass Gradient with shadow */}
       <div className="absolute inset-0 rounded-3xl z-0 
         bg-[rgba(255,255,255,0.05)] 
@@ -85,5 +86,6 @@ export default function PortfolioCommunity() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

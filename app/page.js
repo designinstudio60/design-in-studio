@@ -6,7 +6,7 @@ import PortfolioCommunity from '@/components/PortfolioCommunity';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className=" ">
       <Navbar />
       <HeroSection />
       <ServicesSection />

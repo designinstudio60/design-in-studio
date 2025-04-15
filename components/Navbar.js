@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full p-4 ">
+    <nav className="w-full px-19 py-10 ">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="w-28"> {/* 112px width */}

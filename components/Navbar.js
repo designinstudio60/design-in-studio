@@ -15,17 +15,14 @@ export default function Navbar() {
 
   return (
     <nav className="w-full px-19 py-10 ">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-0 flex items-center justify-between">
         {/* Logo */}
-        <div className="w-28"> {/* 112px width */}
-          <Link href="/">
-            <Image
-              src="/logo.svg"
-              alt="Logo"
-              width={112}
-              height={32} // Adjust height as needed
-            />
-          </Link>
+        <div className="w-[112px] h-8">
+          <img 
+            src="/logo.svg" 
+            alt="Logo" 
+            className="w-full h-full object-contain"
+          />
         </div>
 
         {/* Hamburger Menu Button (Visible on Mobile and Tablet) */}
@@ -34,7 +31,7 @@ export default function Navbar() {
         </button>
 
         {/* Nav items container (Hidden on Mobile and Tablet, Visible on Desktop) */}
-        <div className="hidden lg:flex flex-1 items-center justify-between ml-9">
+        <div className="hidden lg:flex flex-1 items-center justify-between space-x-9 ml-7">
           {/* Nav items */}
           <div className="flex space-x-9"> {/* 36px spacing between items */}
             <Link href="/assets" className="text-white text-base hover:text-gray-400">
@@ -127,3 +124,52 @@ export default function Navbar() {
     </nav>
   );
 }
+
+
+// const Navbar = () => {
+//   return (
+//     <nav className="w-[1280px] h-8 absolute left-[80px] top-[44px]">
+//       <div className="w-full h-full flex items-center justify-between">
+//         {/* Logo Section */}
+//         <div className="w-[112px] h-8">
+//           <img 
+//             src="/logo.svg" 
+//             alt="Logo" 
+//             className="w-full h-full object-contain"
+//           />
+//         </div>
+        
+//         {/* Menu Items Section */}
+//         <div className="flex items-center gap-9 w-[536px] justify-center">
+//           {['Home', 'About', 'Services', 'Portfolio', 'Blog', 'Contact'].map((item) => (
+//             <a 
+//               key={item} 
+//               href="#" 
+//               className="text-base text-white hover:text-gray-300 transition-colors"
+//             >
+//               {item}
+//             </a>
+//           ))}
+//         </div>
+        
+//         {/* Auth Section */}
+//         <div className="flex items-center gap-9 w-[323px] justify-end">
+//           <a href="#" className="text-base text-white hover:text-gray-300 transition-colors">
+//             FAQ
+//           </a>
+//           <a href="#" className="text-base text-white hover:text-gray-300 transition-colors">
+//             Login
+//           </a>
+//           <button className="w-20 h-8 rounded-sm bg-blue-500 text-white hover:bg-blue-600 transition-colors">
+//             Sign Up
+//           </button>
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+

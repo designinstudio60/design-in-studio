@@ -41,7 +41,7 @@ export default function HeroSection() {
         {/* Search Button */}
         <div className="flex items-center gap-1">
           <img src="/btn.svg" alt="Search Type" className="w-12 h-11 mr-2" />
-          <button className="bg-gradient-to-r from-[#1BFFF3] to-[#AEFFAE] text-[#1E1E1E] flex items-center justify-center font-medium w-28 h-11 text-xs mr-[11px] rounded-[3px]">
+          <button className="bg-signup-gradient text-[#1E1E1E] flex items-center justify-center font-medium w-28 h-11 text-xs mr-[11px] rounded-[3px]">
             <Search className="w-4 h-4 mr-2" />
             Search
           </button>
@@ -50,3 +50,5 @@ export default function HeroSection() {
     </section>
   );
 }
+
+

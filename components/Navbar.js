@@ -1,20 +1,20 @@
-
-
 "use client";
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Icons from shadcn/ui
+import { Menu, X } from 'lucide-react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const dispatch = useDispatch();
+  const darkMode = useSelector((state) => state.theme.darkMode);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav className="w-full px-19 py-10 ">
+    <nav className="w-full px-19 py-10">
       <div className="max-w-7xl mx-0 flex items-center justify-between">
         {/* Logo */}
         <div className="w-[112px] h-8">
@@ -25,15 +25,16 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Hamburger Menu Button (Visible on Mobile and Tablet) */}
+       
+
+        {/* Hamburger Menu Button */}
         <button className="lg:hidden text-white" onClick={toggleMenu}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        {/* Nav items container (Hidden on Mobile and Tablet, Visible on Desktop) */}
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex flex-1 items-center justify-between space-x-9 ml-7">
-          {/* Nav items */}
-          <div className="flex space-x-9"> {/* 36px spacing between items */}
+          <div className="flex space-x-9">
             <Link href="/assets" className="text-white text-base hover:text-gray-400">
               Assets
             </Link>
@@ -54,19 +55,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Right side buttons and links */}
-          <div className="flex items-center space-x-9"> {/* 36px spacing */}
-            {/* Create Portfolio button */}
+          <div className="flex items-center space-x-9">
             <Link href="/create-portfolio" className="text-white text-base hover:text-gray-400">
               Create Portfolio
             </Link>
-
-            {/* Login link */}
             <Link href="/login" className="text-white text-base hover:text-gray-400">
               Login
             </Link>
-
-            {/* Signup button */}
             <Link href="/signup">
               <button className="bg-signup-gradient text-[#1E1E1E] text-sm px-4 py-2 rounded-[2px] hover:opacity-90">
                 Signup
@@ -76,7 +71,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile and Tablet Menu (Visible on Mobile and Tablet) */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden fixed top-0 right-0 w-1/2 h-full bg-gray-800 p-4 z-50">
           <div className="flex justify-end">
@@ -111,12 +106,9 @@ export default function Navbar() {
               Login
             </Link>
             <Link href="/signup">
-              {/* <button className="bg-signup-gradient text-[#1E1E1E] text-sm px-4 py-2 rounded-[2px] hover:opacity-90  mt-2">
+              <button className="w-20 h-8 px-8 py-2 text-sm leading-5 bg-signup-gradient text-[#1E1E1E] rounded-[2px] ver:opacity-90 mt-2">
                 Signup
-              </button> */}
-  <button className="w-20 h-8 px-8 py-2 text-sm leading-5 bg-signup-gradient  text-[#1E1E1E] rounded-[2px] ver:opacity-90  mt-2">
-  Signup
-</button>
+              </button>
             </Link>
           </div>
         </div>
@@ -124,52 +116,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-
-// const Navbar = () => {
-//   return (
-//     <nav className="w-[1280px] h-8 absolute left-[80px] top-[44px]">
-//       <div className="w-full h-full flex items-center justify-between">
-//         {/* Logo Section */}
-//         <div className="w-[112px] h-8">
-//           <img 
-//             src="/logo.svg" 
-//             alt="Logo" 
-//             className="w-full h-full object-contain"
-//           />
-//         </div>
-        
-//         {/* Menu Items Section */}
-//         <div className="flex items-center gap-9 w-[536px] justify-center">
-//           {['Home', 'About', 'Services', 'Portfolio', 'Blog', 'Contact'].map((item) => (
-//             <a 
-//               key={item} 
-//               href="#" 
-//               className="text-base text-white hover:text-gray-300 transition-colors"
-//             >
-//               {item}
-//             </a>
-//           ))}
-//         </div>
-        
-//         {/* Auth Section */}
-//         <div className="flex items-center gap-9 w-[323px] justify-end">
-//           <a href="#" className="text-base text-white hover:text-gray-300 transition-colors">
-//             FAQ
-//           </a>
-//           <a href="#" className="text-base text-white hover:text-gray-300 transition-colors">
-//             Login
-//           </a>
-//           <button className="w-20 h-8 rounded-sm bg-blue-500 text-white hover:bg-blue-600 transition-colors">
-//             Sign Up
-//           </button>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
-

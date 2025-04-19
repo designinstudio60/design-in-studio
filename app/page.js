@@ -5,6 +5,7 @@ import ServicesSection from '@/components/ServicesSection';
 import PortfolioCommunity from '@/components/PortfolioCommunity';
 import BgRemoverSection from '@/components/BgRemoverSection';
 import ImageFormat from '@/components/ImageFormat';
+import ColorPellets from '@/components/ColorPellets';
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <PortfolioCommunity />
       <BgRemoverSection />
       <ImageFormat />
+      <ColorPellets/>
       
     </div>
   );

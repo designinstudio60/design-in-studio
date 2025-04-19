@@ -9,7 +9,7 @@ export default function HeroSection() {
         Design your vision{" "}
         <span className="inline-block">
           <span className="heading-grediant">
-            MOAZZAMA 
+            shaping your
           </span>{" "}
           future
         </span>

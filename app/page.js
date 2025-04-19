@@ -7,7 +7,6 @@ import BgRemoverSection from '@/components/BgRemoverSection';
 import ImageFormat from '@/components/ImageFormat';
 import ColorPellets from '@/components/ColorPellets';
 
-
 export default function Home() {
   return (
     <div className=" ">
@@ -18,7 +17,6 @@ export default function Home() {
       <BgRemoverSection />
       <ImageFormat />
       <ColorPellets/>
-      
     </div>
   );
 }

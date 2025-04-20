@@ -6,6 +6,7 @@ import PortfolioCommunity from '@/components/PortfolioCommunity';
 import BgRemoverSection from '@/components/BgRemoverSection';
 import ImageFormat from '@/components/ImageFormat';
 import ColorPellets from '@/components/ColorPellets';
+import FileConverter from '@/components/FileConverter';
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
       <BgRemoverSection />
       <ImageFormat />
       <ColorPellets/>
+      <FileConverter />
+      {/* Add more components as needed */}
     </div>
   );
 }

@@ -13,11 +13,12 @@ const ColorPellets = () => {
             quality={100}
           />
         </div>
-        <div className="w-140 h-97.5 flex flex-col justify-center ">
-          <h1 className="text-4xl font-medium w-full mb-12 text-white">
+        <div className="w-117.75 h-97.25 flex flex-col justify-center ">
+        <h1 className="text-4xl font-medium w-full mb-12 text-white">
           Generate  <span className="text-transparent bg-clip-text heading-grediant">Color Palettes  </span>
           in a <br />New Way
           </h1>
+         
           
           <p className="text-base font-normal mb-12 text-white">
           Palette maker is a unique tool for creative professionals and color lovers that allows you to create color palettes and test their behavior in pre-made design examples from the most common creative fields such as Logo design, UI/UX, Patterns, Posters and more.</p>          

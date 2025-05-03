@@ -10,7 +10,7 @@ export default function AssetCard({ item, width, height, type }) {
 
   return (
     <div
-      className="bg-[#1D1D1D] rounded-[6px] overflow-hidden cursor-pointer"
+      className="bg-[#121212] rounded-[6px] overflow-hidden cursor-pointer"
       style={{ width: `${width}px`, height: `${height}px` }}
       onClick={handleClick}
     >

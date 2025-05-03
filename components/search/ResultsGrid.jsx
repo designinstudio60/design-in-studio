@@ -44,95 +44,6 @@ import ResultColumn from "./ResultColumn";
         ];
         
 
-
-// export default function ResultsGrid({
-//   query,
-//   type,
-//   page,
-//   results = [],
-//   isLoading,
-//   error,
-//   onPageChange
-// }) {
-
-//     if (isLoading) {
-//             return (
-//               <div className="flex items-center justify-center h-64">
-//                 <p className="text-white">Loading results for "{query}"...</p>
-//               </div>
-//             );
-//           }
-        
-//           if (error) {
-//             return (
-//               <div className="flex items-center justify-center h-64">
-//                 <p className="text-red-500">Error: {error}</p>
-//               </div>
-//             );
-//           }
-        
-//           if (results.length === 0) {
-//             return (
-//               <div className="flex items-center justify-center h-64">
-//                 <p className="text-white">No results found for "{query}"</p>
-//               </div>
-//             );
-//           }
-        
-//           // Split results into three columns
-//           const column1Items = results.slice(0, 9);
-//           const column2Items = results.slice(9, 19);
-//           const column3Items = results.slice(19, 29);
-//   return (
-//     <div className="rounded-md overflow-hidden mt-12.75 mx-auto">
-//       {/* Center the grid with equal left/right spacing */}
-//       <div className="flex justify-center gap-8.5">
-//         {/* Column 1 */}
-//         <ResultColumn 
-//           items={results.slice(0, 9)} 
-//           layouts={columnLayouts[0]} 
-//           type={type} 
-//         />
-        
-//         {/* Column 2 */}
-//         <ResultColumn 
-//           items={results.slice(9, 19)} 
-//           layouts={columnLayouts[1]} 
-//           type={type} 
-//         />
-        
-//         {/* Column 3 */}
-//         <ResultColumn 
-//           items={results.slice(19, 29)} 
-//           layouts={columnLayouts[2]} 
-//           type={type} 
-//         />
-//       </div>
-
-//       {/* Pagination */}
-//       <div className="flex justify-center p-6">
-//         <div className="flex items-center gap-2 bg-[#1D1D1D] rounded-[6px] p-2">
-//           <button
-//             disabled={page <= 1}
-//             onClick={() => onPageChange(page - 1)}
-//             className="flex items-center justify-center w-10 h-10 bg-[#3D3D3D] text-white rounded-[6px] hover:bg-[#4D4D4D] disabled:opacity-50"
-//           >
-//             <FiChevronLeft />
-//           </button>
-//           <span className="px-4 text-white">Page {page}</span>
-//           <button
-//             disabled={results.length < 29}
-//             onClick={() => onPageChange(page + 1)}
-//             className="flex items-center justify-center w-10 h-10 bg-[#3D3D3D] text-white rounded-[6px] hover:bg-[#4D4D4D] disabled:opacity-50"
-//           >
-//             <FiChevronRight />
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 export default function ResultsGrid({
   query,
   type,
@@ -187,11 +98,11 @@ export default function ResultsGrid({
       </div>
 
       <div className="flex justify-center p-6">
-        <div className="flex items-center gap-2 bg-[#1D1D1D] rounded-[6px] p-2">
+        <div className="flex items-center gap-2  rounded-[6px] p-2">
           <button
             disabled={page <= 1}
             onClick={() => onPageChange(page - 1)}
-            className="flex items-center justify-center w-10 h-10 bg-[#3D3D3D] text-white rounded-[6px] hover:bg-[#4D4D4D] disabled:opacity-50"
+            className="flex items-center justify-center w-10 h-10  text-white rounded-[6px] hover:bg-[#4D4D4D] disabled:opacity-50"
           >
             <FiChevronLeft />
           </button>

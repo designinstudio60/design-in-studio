@@ -1,4 +1,3 @@
-
 'use client';
 import { useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
@@ -17,7 +16,7 @@ import SearchFilters from "@/components/search/SearchFilters";
 import RelatedTags from "@/components/search/RelatedTags";
 import ResultsGrid from "@/components/search/ResultsGrid";
 
-export default function SearchPage() {
+export default function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const dispatch = useDispatch();
@@ -100,10 +99,10 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1D1D1D]">
+    <div className="min-h-screen ">
       <div className="flex">
         {showFilters && (
-          <div className="w-64 bg-[#1D1D1D] border-r border-gray-700 p-6 overflow-y-auto fixed h-[calc(100vh-64px)] mt-16 z-40">
+          <div className="w-64 bg-[#121212] border-r border-gray-700 p-6 overflow-y-auto fixed h-[calc(100vh-64px)] mt-16 z-40">
             <SearchFilters 
               currentType={type}
               onClose={() => dispatch(toggleFilters())}
@@ -146,4 +145,3 @@ export default function SearchPage() {
     </div>
   );
 }
-

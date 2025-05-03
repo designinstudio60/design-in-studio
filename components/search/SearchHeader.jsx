@@ -29,10 +29,10 @@ export default function SearchHeader({ initialQuery = "", initialType = "all", o
   };
 
   return (
-    <div className="flex items-center gap-4 mb-6 sticky top-0 z-30 bg-[#1D1D1D] py-4">
+    <div className="flex items-center gap-4 mb-6  top-0 z-30  py-4">
       <button
         onClick={onFilterToggle}
-        className="flex items-center justify-center gap-5 bg-[#1D1D1D] text-white rounded-sm h-16 w-[112px] shrink-0 hover:bg-[#2D2D2D] transition-colors"
+        className="flex items-center justify-center gap-5  text-white rounded-sm h-16 w-[112px] shrink-0 hover:bg-[#2D2D2D] transition-colors"
       >
         <FiFilter />
         Filter

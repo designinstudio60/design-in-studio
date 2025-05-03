@@ -28,6 +28,8 @@
 body {
   background-color: var(--bg-color);
 }
+
+
 .bg-signup-gradient {
   background: linear-gradient(90deg, #1BFFF3 0%, #AEFFAE 100%);
  

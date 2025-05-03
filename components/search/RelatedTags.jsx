@@ -22,7 +22,7 @@ export default function RelatedTags({ tags, onTagSelect }) {
         <button 
           onClick={showPrevTags}
           disabled={tagOffset === 0}
-          className="p-1 rounded-md bg-[#323232] text-white disabled:opacity-50 hover:bg-[#3D3D3D]"
+          className="p-1 rounded-md  text-white disabled:opacity-50 hover:bg-[#3D3D3D]"
         >
           <ChevronLeft size={20} />
         </button>

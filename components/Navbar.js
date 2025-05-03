@@ -17,12 +17,16 @@ export default function Navbar() {
     <nav className="w-full px-19 py-10">
       <div className="max-w-7xl mx-0 flex items-center justify-between">
         {/* Logo */}
+      
         <div className="w-[112px] h-8">
-          <img 
-            src="/logo.svg" 
-            alt="Logo" 
-            className="w-full h-full object-contain"
-          />
+          <Link href="/">
+            <img 
+              src="/logo.svg" 
+              alt="Logo" 
+              className="w-full h-full object-contain"
+            />
+          </Link>
+          
         </div>
 
        

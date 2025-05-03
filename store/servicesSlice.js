@@ -35,8 +35,16 @@ export const servicesSlice = createSlice({
   name: 'services',
   initialState,
   reducers: {
-    // Add reducers here if needed
-  },
-})
+    setServices: (state, action) => {
+      state.services = action.payload;
+    }
+  }
+});
 
-export default servicesSlice.reducer
+export const { setServices } = servicesSlice.actions;
+export default servicesSlice.reducer;
+
+
+
+
+

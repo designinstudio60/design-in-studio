@@ -1,141 +1,19 @@
-// "use client";
-// import { Search } from "lucide-react";
-
-// export default function HeroSection() {
-//   return (
-//     <section className="mx-40 flex flex-col mt-14 p-6  w-268 font-['Helvetica_Neue']">
-//       {/* Heading with gradient */}
-//       <div className="text-white mb-4 font-bold text-left w-full text-6xl  tracking-[-0.02em]">
-//         Design your vision{" "}
-//         <span className="inline-block">
-//           <span className="heading-grediant">
-//             shaping your
-//           </span>{" "}
-//           future
-//         </span>
-//       </div>
-
-//       {/* Paragraph - changed from font-thin to font-normal */}
-//       <p className="text-white  mx-auto text-center mt-3 w-[754px] h-11 text-xl leading-[1.4]">
-//         Turn ideas into outstanding designs with high quality vectors photos videos mockups and more
-//       </p>
-
-//       {/* Rest of the component remains unchanged */}
-//       <div className="flex items-center bg-[#1D1D1D] rounded-md overflow-hidden border border-[#939393] mt-27 w-5x h-16">
-//         {/* Asset Selector */}
-//         <div className="flex items-center justify-between border-r border-[#939393] w-[171px] h-full px-3">
-//           <img src="/assets.svg" alt="Asset Type" className="w-[25px] h-[22px]" />
-//           <span className="font-normal text-white text-lg">Assets</span>
-//           <img src="/Polygon 1.svg" alt="Dropdown" className="w-[10px] h-[10px]" />
-//         </div>
-
-//         {/* Search Input */}
-//         <div className="flex-1 flex items-center px-4">
-//           <input
-//             type="text"
-//             placeholder="search all assets"
-//             className="bg-transparent border-none text-white w-full focus:outline-none text-lg h-full placeholder-[#939393]"
-//           />
-//         </div>
-
-//         {/* Search Button */}
-//         <div className="flex items-center gap-1">
-//           <img src="/btn.svg" alt="Search Type" className="w-12 h-11 mr-2" />
-//           <button className="bg-signup-gradient text-[#1E1E1E] flex items-center justify-center font-medium w-28 h-11 text-xs mr-[11px] rounded-[3px]">
-//             <Search className="w-4 h-4 mr-2" />
-//             Search
-//           </button>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
-// "use client";
-// import { Search } from "lucide-react";
-// import { useState } from "react";
-// import { useRouter } from "next/navigation";
-
-// export default function HeroSection() {
-//   const [searchQuery, setSearchQuery] = useState("");
-//   const router = useRouter();
-
-//   const handleSearch = (e) => {
-//     e.preventDefault();
-//     if (searchQuery.trim()) {
-//       router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
-//     }
-//   };
-
-//   return (
-//     <section className="mx-40 flex flex-col mt-14 p-6 w-268 font-['Helvetica_Neue']">
-//       {/* Heading with gradient */}
-//       <div className="text-white mb-4 font-bold text-left w-full text-6xl tracking-[-0.02em]">
-//         Design your vision{" "}
-//         <span className="inline-block">
-//           <span className="heading-grediant">shaping your</span> future
-//         </span>
-//       </div>
-
-//       {/* Paragraph */}
-//       <p className="text-white mx-auto text-center mt-3 w-[754px] h-11 text-xl leading-[1.4]">
-//         Turn ideas into outstanding designs with high quality vectors photos videos mockups and more
-//       </p>
-
-//       {/* Search Form */}
-//       <form onSubmit={handleSearch} className="flex items-center bg-[#1D1D1D] rounded-md overflow-hidden border border-[#939393] mt-27 w-5x h-16">
-//         {/* Asset Selector */}
-//         <div className="flex items-center justify-between border-r border-[#939393] w-[171px] h-full px-3">
-//           <img src="/assets.svg" alt="Asset Type" className="w-[25px] h-[22px]" />
-//           <span className="font-normal text-white text-lg">Assets</span>
-//           <img src="/Polygon 1.svg" alt="Dropdown" className="w-[10px] h-[10px]" />
-//         </div>
-
-//         {/* Search Input */}
-//         <div className="flex-1 flex items-center px-4">
-//           <input
-//             type="text"
-//             value={searchQuery}
-//             onChange={(e) => setSearchQuery(e.target.value)}
-//             placeholder="search all assets"
-//             className="bg-transparent border-none text-white w-full focus:outline-none text-lg h-full placeholder-[#939393]"
-//           />
-//         </div>
-
-//         {/* Search Button */}
-//         <div className="flex items-center gap-1">
-//           <img src="/btn.svg" alt="Search Type" className="w-12 h-11 mr-2" />
-//           <button 
-//             type="submit"
-//             className="bg-signup-gradient text-[#1E1E1E] flex items-center justify-center font-medium w-28 h-11 text-xs mr-[11px] rounded-[3px]"
-//           >
-//             <Search className="w-4 h-4 mr-2" />
-//             Search
-//           </button>
-//         </div>
-//       </form>
-//     </section>
-//   );
-// }
-
-
 
 "use client";
 import { Search, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { 
-  FiImage,        // Photos
-  FiFeather,      // Illustrations
-  FiLayers,       // Vectors
-  FiCode,         // SVG
-  FiVideo,        // Videos
-  FiMusic,        // Music
-  FiPackage       // Default Assets
+  FiImage,
+  FiFeather,
+  FiLayers,
+  FiCode,
+  FiVideo,
+  FiMusic,
+  FiPackage
 } from "react-icons/fi";
 
-export default function HeroSection() {
+export default function HeroSection({ heading, subheading }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAsset, setSelectedAsset] = useState({
     name: "Assets",
@@ -163,7 +41,11 @@ export default function HeroSection() {
   };
 
   const handleAssetSelect = (asset) => {
-    setSelectedAsset(asset);
+    setSelectedAsset({
+      name: asset.name,
+      value: asset.value,
+      icon: asset.icon
+    });
     setShowDropdown(false);
   };
 
@@ -179,18 +61,25 @@ export default function HeroSection() {
 
   return (
     <section className="mx-40 flex flex-col mt-14 p-6 w-268 font-['Helvetica_Neue']">
-      {/* Heading with gradient */}
+      {/* Heading and paragraph */}
       <div className="text-white mb-4 font-bold text-left w-full text-6xl tracking-[-0.02em]">
-        Design your vision{" "}
-        <span className="inline-block">
-          <span className="heading-grediant">shaping your</span> future
-        </span>
+        {heading ? (
+          heading
+        ) : (
+          <>
+            Design your vision{" "}
+            <span className="inline-block">
+              <span className="heading-grediant">shaping your</span> future
+            </span>
+          </>
+        )}
       </div>
 
-      {/* Paragraph */}
-      <p className="text-white mx-auto text-center mt-3 w-[754px] h-11 text-xl leading-[1.4]">
-        Turn ideas into outstanding designs with high quality vectors photos videos mockups and more
-      </p>
+      {subheading && (
+        <p className="text-white mx-auto text-center mt-3 w-[754px] h-11 text-xl leading-[1.4]">
+          {subheading}
+        </p>
+      )}
 
       {/* Search Form */}
       <div className="relative">
@@ -202,7 +91,7 @@ export default function HeroSection() {
             onClick={() => setShowDropdown(!showDropdown)}
           >
             <div className="flex items-center gap-2">
-              <span className="text-white">{selectedAsset.icon}</span>
+              {selectedAsset.icon}
               <span className="font-normal text-white text-lg whitespace-nowrap">
                 {selectedAsset.name}
               </span>
@@ -234,7 +123,7 @@ export default function HeroSection() {
           </div>
         </form>
 
-        {/* Dropdown Menu - Positioned absolutely to the form */}
+        {/* Dropdown Menu */}
         {showDropdown && (
           <div className="absolute left-0 top-[68px] w-[171px] bg-[#1D1D1D] border border-[#939393] rounded-md shadow-lg z-50 overflow-hidden">
             {assetTypes.map((asset) => (
@@ -245,7 +134,7 @@ export default function HeroSection() {
                 }`}
                 onClick={() => handleAssetSelect(asset)}
               >
-                <span className="flex-shrink-0">{asset.icon}</span>
+                {asset.icon}
                 <span className="text-white text-lg whitespace-nowrap">
                   {asset.name}
                 </span>

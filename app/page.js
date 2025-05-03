@@ -1,5 +1,4 @@
 
-import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
 import PortfolioCommunity from '@/components/PortfolioCommunity';
@@ -11,15 +10,26 @@ import FileConverter from '@/components/FileConverter';
 export default function Home() {
   return (
     <div className=" ">
-      <Navbar />
-      <HeroSection />
+      <HeroSection 
+  heading={
+    <>
+      Design your vision{" "}
+      <span className="inline-block">
+        <span className="heading-grediant">shaping your</span> future
+      </span>
+    </>
+  }
+  subheading="Turn ideas into outstanding designs with high quality vectors photos videos mockups and more"
+/>
+
       <ServicesSection />
       <PortfolioCommunity />
       <BgRemoverSection />
       <ImageFormat />
       <ColorPellets/>
       <FileConverter />
-      {/* Add more components as needed */}
+   
+    
     </div>
   );
 }

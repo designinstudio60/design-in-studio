@@ -1,3 +1,4 @@
+
 'use client';
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
@@ -35,14 +36,13 @@ export default function AssetPage() {
             tags: searchParams.get('q') || ''
           });
 
-          // Calculate aspect ratio for dynamic sizing
           if (assetData.imageWidth && assetData.imageHeight) {
             const aspectRatio = assetData.imageWidth / assetData.imageHeight;
             const maxWidth = 768;
             const calculatedHeight = maxWidth / aspectRatio;
             setDimensions({
               width: maxWidth,
-              height: Math.min(calculatedHeight, 576) // Cap height at 576
+              height: Math.min(calculatedHeight, 576)
             });
           }
         }
@@ -68,16 +68,27 @@ export default function AssetPage() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center w-full h-160 bg-[#1d1d1d] rounded-xl">
-        <p>Loading...</p>
+      <div className="flex items-center justify-center w-full h-168 bg-[#1d1d1d] rounded-xl">
+        <div className="animate-pulse flex flex-col items-center">
+          <div className="h-12 w-12 bg-[#2d2d2d] rounded-full mb-4"></div>
+          <div className="h-4 bg-[#2d2d2d] rounded w-32"></div>
+        </div>
       </div>
     );
   }
 
   if (!asset) {
     return (
-      <div className="flex items-center justify-center w-full h-[672px] bg-[#1d1d1d] rounded-xl">
-        <p>Asset not found</p>
+      <div className="flex items-center justify-center w-full h-168 bg-[#1d1d1d] rounded-xl">
+        <div className="text-center">
+          <div className="text-red-500 text-xl mb-4">Asset not found</div>
+          <button 
+            onClick={() => router.back()}
+            className="px-6 py-2 bg-[#3B82F6] text-white rounded-lg  transition-colors"
+          >
+            Back to Browse
+          </button>
+        </div>
       </div>
     );
   }
@@ -87,20 +98,16 @@ export default function AssetPage() {
   return (
     <div className="flex justify-center items-center bg-[#121212] w-full p-8">
       {/* Main container */}
-      <div className="flex w-full max-w-[1280px] h-[672px] bg-[#1d1d1d] rounded-xl shadow-lg p-5">
-        {/* Left section - Asset preview with rounded corners */}
-        <div 
-          className="flex items-center justify-center overflow-hidden ml-5 rounded-[16px] bg-[#2d2d2d]"
-          style={{
-            width: `${dimensions.width}px`,
-            height: `${dimensions.height}px`,
-            minWidth: '300px' // Ensure it doesn't get too small
-          }}
-        >
+      <div className="flex w-full max-w-7xl bg-[#1d1d1d] rounded-xl shadow-xl p-10 gap-16">
+        {/* Left section - Asset preview */}
+        <div className="flex-1 max-w-[768px]">
           {asset.type === 'video' ? (
             <video
               src={asset.videos?.large?.url}
-              className="w-full h-full object-cover rounded-[16px]"
+              className="w-full h-auto max-h-[576px] object-contain rounded-[16px] shadow-lg bg-[#2d2d2d]"
+              style={{
+                aspectRatio: `${dimensions.width}/${dimensions.height}`
+              }}
               controls
               autoPlay
               muted
@@ -112,10 +119,9 @@ export default function AssetPage() {
               alt={title}
               width={dimensions.width}
               height={dimensions.height}
-              className="object-contain rounded-[16px]"
+              className="w-full h-auto max-h-[576px] object-contain rounded-[16px] shadow-lg bg-[#2d2d2d]"
               style={{
-                width: '100%',
-                height: '100%'
+                aspectRatio: `${dimensions.width}/${dimensions.height}`
               }}
               priority
             />
@@ -123,12 +129,14 @@ export default function AssetPage() {
         </div>
 
         {/* Right section - Actions */}
-        <div className="w-[305px] flex flex-col ml-16 mt-12">
+        <div className="w-[305px] flex flex-col">
           {/* Like and Share buttons */}
           <div className="flex gap-4 mb-12">
             <button
               onClick={() => setLiked(!liked)}
-              className={`p-3 rounded-lg ${liked ? 'text-red-500' : 'text-gray-400'} hover:bg-[#2d2d2d]`}
+              className={`p-4 rounded-lg transition-colors ${
+                liked ? 'text-red-500 bg-[#ef444411]' : 'text-[#9CA3AF] hover:bg-[#2d2d2d]'
+              }`}
             >
               {liked ? (
                 <FaHeart className="h-6 w-6" />
@@ -137,21 +145,21 @@ export default function AssetPage() {
               )}
             </button>
             
-            <button className="p-3 text-gray-400 rounded-lg hover:bg-[#2d2d2d]">
+            <button className="p-4 text-[#9CA3AF] rounded-lg hover:bg-[#2d2d2d] transition-colors">
               <FaRegShareSquare className="h-6 w-6" />
             </button>
           </div>
 
           {/* Designer name */}
-          <p className="text-gray-400 text-sm mb-1">by {asset.user}</p>
+          <p className="text-[#D1D5DB] text-lg mb-2">by {asset.user}</p>
 
           {/* Asset title */}
-          <h2 className="text-xl font-medium text-white mb-12">{title}</h2>
+          <h2 className="text-2xl font-semibold text-white mb-12 leading-tight">{title}</h2>
 
           {/* Download button */}
           <button
             onClick={handleDownload}
-            className="w-52 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center justify-center gap-2"
+            className="w-full py-4 bg-signup-gradient text-[#1d1d1d] font-medium rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-3"
           >
             <FiDownload className="h-5 w-5" />
             <span>Download</span>

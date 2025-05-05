@@ -1,28 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ['cdn.pixabay.com'],
-  },
-}
-
-
-
 // /** @type {import('next').NextConfig} */
 // const nextConfig = {
 //   images: {
-//     remotePatterns: [
-//       {
-//         protocol: 'https',
-//         hostname: '**.pixabay.com',
-//       },
-//       {
-//         protocol: 'https',
-//         hostname: '**.pexels.com',
-//       },
-//       // Add other domains as needed
-//     ],
+//     domains: ['cdn.pixabay.com'],
 //   },
-//   // Other Next.js config options...
-// };
+// }
 
-// module.exports = nextConfig;
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ['pixabay.com'],
+  },
+  // ... other config
+}
+
+module.exports = nextConfig

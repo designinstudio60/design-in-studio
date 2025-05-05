@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Design In Studio | Your ultimate mixkit",
-  description: "Developed by Saqib Raza",
+  description: "Developed by Zubair",
 };
 
 export default function RootLayout({ children }) {

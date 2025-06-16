@@ -62,20 +62,20 @@ export default function SearchContent() {
       }
 
       const response = await fetch(apiUrl);
-      
+
       if (!response.ok) {
         throw new Error(`Pixabay API request failed with status ${response.status}`);
       }
 
       const data = await response.json();
-      
+
       if (!data?.hits) {
         throw new Error("Invalid response format from Pixabay API");
       }
 
-      dispatch(setResults({ 
-        results: data.hits || [], 
-        totalHits: data.totalHits || 0 
+      dispatch(setResults({
+        results: data.hits || [],
+        totalHits: data.totalHits || 0
       }));
     } catch (err) {
       console.error("Search error:", err);
@@ -93,7 +93,7 @@ export default function SearchContent() {
 
     try {
       const apiKey = process.env.NEXT_PUBLIC_PIXABAY_KEY;
-      
+
       if (!apiKey) {
         throw new Error("API key is missing");
       }
@@ -101,18 +101,18 @@ export default function SearchContent() {
       const response = await fetch(
         `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(searchQuery)}&per_page=50`
       );
-      
+
       if (!response.ok) {
         throw new Error(`Pixabay API request failed with status ${response.status}`);
       }
 
       const data = await response.json();
-      
+
       if (!Array.isArray(data?.hits)) {
         throw new Error("Invalid response format from Pixabay API");
       }
 
-      const allTags = data.hits.flatMap(item => 
+      const allTags = data.hits.flatMap(item =>
         item.tags ? item.tags.split(", ") : []
       );
       dispatch(setRelatedTags([...new Set(allTags)]));
@@ -128,10 +128,10 @@ export default function SearchContent() {
     const urlPage = parseInt(searchParams.get("page")) || 1;
 
     if (urlQuery) {
-      dispatch(setSearchParams({ 
-        query: urlQuery, 
-        type: urlType, 
-        page: urlPage 
+      dispatch(setSearchParams({
+        query: urlQuery,
+        type: urlType,
+        page: urlPage
       }));
       fetchResults(urlQuery, urlType, urlPage);
       fetchRelatedTags(urlQuery);
@@ -147,51 +147,53 @@ export default function SearchContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212]">
-      <Suspense>
-      <div className="flex">
-        {showFilters && (
-          <div className="w-64 bg-[#121212] border-r border-gray-700 p-6 overflow-y-auto fixed h-[calc(100vh-64px)] mt-16 z-40">
-            <SearchFilters 
-              currentType={type}
-              onClose={() => dispatch(toggleFilters())}
-              onSelectType={(type) => {
-                router.push(`/search?q=${encodeURIComponent(query)}&type=${type}&page=1`);
-                dispatch(toggleFilters());
-              }}
-            />
-          </div>
-        )}
+    <Suspense>
+      <div className="min-h-screen bg-[#121212]">
 
-        <div className={`flex-1 transition-all duration-300 ${showFilters ? 'ml-64' : 'ml-0'}`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <SearchHeader 
-              initialQuery={query}
-              initialType={type}
-              onSearch={handleSearch}
-              onFilterToggle={() => dispatch(toggleFilters())}
-            />
-
-            {relatedTags.length > 0 && (
-              <RelatedTags 
-                tags={relatedTags} 
-                onTagSelect={(tag) => router.push(`/search?q=${encodeURIComponent(tag)}&type=all&page=1`)} 
+        <div className="flex">
+          {showFilters && (
+            <div className="w-64 bg-[#121212] border-r border-gray-700 p-6 overflow-y-auto fixed h-[calc(100vh-64px)] mt-16 z-40">
+              <SearchFilters
+                currentType={type}
+                onClose={() => dispatch(toggleFilters())}
+                onSelectType={(type) => {
+                  router.push(`/search?q=${encodeURIComponent(query)}&type=${type}&page=1`);
+                  dispatch(toggleFilters());
+                }}
               />
-            )}
+            </div>
+          )}
 
-            <ResultsGrid
-              query={query}
-              type={type}
-              page={page}
-              results={results}
-              isLoading={isLoading}
-              error={error}
-              onPageChange={(newPage) => router.push(`/search?q=${encodeURIComponent(query)}&type=${type}&page=${newPage}`)}
-            />
+          <div className={`flex-1 transition-all duration-300 ${showFilters ? 'ml-64' : 'ml-0'}`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              <SearchHeader
+                initialQuery={query}
+                initialType={type}
+                onSearch={handleSearch}
+                onFilterToggle={() => dispatch(toggleFilters())}
+              />
+
+              {relatedTags.length > 0 && (
+                <RelatedTags
+                  tags={relatedTags}
+                  onTagSelect={(tag) => router.push(`/search?q=${encodeURIComponent(tag)}&type=all&page=1`)}
+                />
+              )}
+
+              <ResultsGrid
+                query={query}
+                type={type}
+                page={page}
+                results={results}
+                isLoading={isLoading}
+                error={error}
+                onPageChange={(newPage) => router.push(`/search?q=${encodeURIComponent(query)}&type=${type}&page=${newPage}`)}
+              />
+            </div>
           </div>
         </div>
+
       </div>
-      </Suspense>
-    </div>
+    </Suspense>
   );
 }

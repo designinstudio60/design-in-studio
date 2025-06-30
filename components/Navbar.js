@@ -14,64 +14,63 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full px-19 py-10">
-      <div className="max-w-7xl mx-0 flex items-center justify-between">
-        {/* Logo */}
-      
-        <div className="w-[112px] h-8">
-          <Link href="/">
-            <img 
-              src="/logo.svg" 
-              alt="Logo" 
-              className="w-full h-full object-contain"
-            />
-          </Link>
-          
-        </div>
+    <nav className="w-full px-19 py-10 flex flex-row items-center justify-between gap-6">
+      {/* Logo */}
+      <div className="w-[112px] h-8">
+        <Link href="/">
+          <img
+            src="/logo.svg"
+            alt="Logo"
+            className="w-full h-full object-contain"
+          />
+        </Link>
 
-       
+      </div>
 
-        {/* Hamburger Menu Button */}
+              {/* Hamburger Menu Button */}
         <button className="lg:hidden text-white" onClick={toggleMenu}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
 
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex flex-1 items-center justify-between space-x-9 ml-7">
-          <div className="flex space-x-9">
-            <Link href="/assets" className="text-white text-base hover:text-gray-400">
-              Assets
-            </Link>
-            <Link href="/ai-tools" className="text-white text-base hover:text-gray-400">
-              Ai Tools
-            </Link>
-            <Link href="/ai-images" className="text-white text-base hover:text-gray-400">
-              Ai Images
-            </Link>
-            <Link href="/templates" className="text-white text-base hover:text-gray-400">
-              Templates
-            </Link>
-            <Link href="/explore" className="text-white text-base hover:text-gray-400">
-              Explore
-            </Link>
-            <Link href="/hire" className="text-white text-base hover:text-gray-400">
-              Hire
-            </Link>
-          </div>
+      <div className="hidden lg:flex items-center justify-between w-full min-w-6xl mx-0">
 
-          <div className="flex items-center space-x-9">
-            <Link href="/create-portfolio" className="text-white text-base hover:text-gray-400">
-              Create Portfolio
-            </Link>
-            <Link href="/login" className="text-white text-base hover:text-gray-400">
-              Login
-            </Link>
-            <Link href="/signup">
-              <button className="bg-signup-gradient text-[#1E1E1E] text-sm px-4 py-2 rounded-[2px] hover:opacity-90">
-                Signup
-              </button>
-            </Link>
-          </div>
+
+
+        {/* Desktop Navigation */}
+
+        <div className="flex space-x-9">
+          <Link href="/assets" className="text-white text-base hover:text-gray-400">
+            Assets
+          </Link>
+          <Link href="/ai-tools" className="text-white text-base hover:text-gray-400">
+            Ai Tools
+          </Link>
+          <Link href="/ai-images" className="text-white text-base hover:text-gray-400">
+            Ai Images
+          </Link>
+          <Link href="/templates" className="text-white text-base hover:text-gray-400">
+            Templates
+          </Link>
+          <Link href="/explore" className="text-white text-base hover:text-gray-400">
+            Explore
+          </Link>
+          <Link href="/hire" className="text-white text-base hover:text-gray-400">
+            Hire
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-7">
+          <Link href="/create-portfolio" className="text-white text-base hover:text-gray-400">
+            Create Portfolio
+          </Link>
+          <Link href="/login" className="text-white text-base hover:text-gray-400">
+            Login
+          </Link>
+          <Link href="/signup">
+            <button className="bg-signup-gradient text-[#1E1E1E] text-sm px-4 py-2 rounded-[2px] hover:opacity-90">
+              Signup
+            </button>
+          </Link>
         </div>
       </div>
 

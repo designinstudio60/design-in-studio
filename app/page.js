@@ -9,27 +9,27 @@ import FileConverter from '@/components/FileConverter';
 
 export default function Home() {
   return (
-    <div className=" ">
-      <HeroSection 
-  heading={
-    <>
-      Design your vision{" "}
-      <span className="inline-block">
-        <span className="heading-grediant">shaping your</span> future
-      </span>
-    </>
-  }
-  subheading="Turn ideas into outstanding designs with high quality vectors photos videos mockups and more"
-/>
+    <div className="flex flex-col items-center hide-scrollbar">
+      <HeroSection
+        heading={
+          <>
+            Design your vision{" "}
+            <span className="inline-block">
+              <span className="heading-grediant">shaping your</span> future
+            </span>
+          </>
+        }
+        subheading="Turn ideas into outstanding designs with high quality vectors photos videos mockups and more"
+      />
 
       <ServicesSection />
       <PortfolioCommunity />
       <BgRemoverSection />
       <ImageFormat />
-      <ColorPellets/>
+      <ColorPellets />
       <FileConverter />
-   
-    
+
+
     </div>
   );
 }

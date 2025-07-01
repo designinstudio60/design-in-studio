@@ -1,16 +1,15 @@
-
 "use client";
 import { Search, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { 
+import {
   FiImage,
   FiFeather,
   FiLayers,
   FiCode,
   FiVideo,
   FiMusic,
-  FiPackage
+  FiPackage,
 } from "react-icons/fi";
 
 export default function HeroSection({ heading, subheading }) {
@@ -18,7 +17,7 @@ export default function HeroSection({ heading, subheading }) {
   const [selectedAsset, setSelectedAsset] = useState({
     name: "Assets",
     value: "all",
-    icon: <FiPackage className="w-5 h-5 text-white" />
+    icon: <FiPackage className="w-5 h-5 text-white" />,
   });
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef(null);
@@ -41,11 +40,7 @@ export default function HeroSection({ heading, subheading }) {
   };
 
   const handleAssetSelect = (asset) => {
-    setSelectedAsset({
-      name: asset.name,
-      value: asset.value,
-      icon: asset.icon
-    });
+    setSelectedAsset(asset);
     setShowDropdown(false);
   };
 
@@ -60,84 +55,89 @@ export default function HeroSection({ heading, subheading }) {
   }, []);
 
   return (
-    <section className="mx-40 flex flex-col mt-14 p-6 w-268 font-['Helvetica_Neue']">
-      {/* Heading and paragraph */}
-      <div className="text-white mb-4 font-bold text-left w-full text-6xl tracking-[-0.02em]">
-        {heading ? (
-          heading
-        ) : (
-          <>
-            Design your vision{" "}
-            <span className="inline-block">
-              <span className="heading-grediant">shaping your</span> future
-            </span>
-          </>
-        )}
+    <section className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40  py-6 font-['Helvetica_Neue']">
+      {/* Heading */}
+      <div className="flex items-center justify-center px-4 text-center">
+        <div className="text-white font-bold w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-tight">
+          {heading ? (
+            heading
+          ) : (
+            <>
+              Design your vision{" "}
+              <span className="inline-block">
+                <span className="heading-grediant">shaping your</span> future
+              </span>
+            </>
+          )}
+        </div>
       </div>
 
+
+      {/* Subheading */}
       {subheading && (
-        <p className="text-white mx-auto text-center mt-3 w-[754px] h-11 text-xl leading-[1.4]">
+        <p className="text-white text-center mt-4 max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-snug">
           {subheading}
         </p>
       )}
 
       {/* Search Form */}
-      <div className="relative">
-        <form onSubmit={handleSearch} className="flex items-center bg-[#1D1D1D] rounded-md overflow-hidden border border-[#939393] mt-27 w-full h-16">
-          {/* Asset Selector */}
-          <div 
+      <div className="relative mt-10">
+        <form
+          onSubmit={handleSearch}
+          className="flex flex-col sm:flex-row items-stretch bg-[#1D1D1D] rounded-md border border-[#939393] w-full"
+        >
+          {/* Asset Dropdown */}
+          <div
             ref={dropdownRef}
-            className="flex items-center justify-between border-r border-[#939393] w-[171px] h-full px-4 cursor-pointer"
+            className="flex items-center justify-between border-b sm:border-b-0 sm:border-r border-[#939393] px-4 py-3 sm:w-[171px] cursor-pointer"
             onClick={() => setShowDropdown(!showDropdown)}
           >
             <div className="flex items-center gap-2">
               {selectedAsset.icon}
-              <span className="font-normal text-white text-lg whitespace-nowrap">
-                {selectedAsset.name}
-              </span>
+              <span className="text-white text-sm sm:text-base">{selectedAsset.name}</span>
             </div>
-            <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${showDropdown ? "rotate-180" : ""}`} />
+            <ChevronDown
+              className={`w-4 h-4 text-white transition-transform duration-200 ${showDropdown ? "rotate-180" : ""
+                }`}
+            />
           </div>
 
-          {/* Search Input */}
-          <div className="flex-1 flex items-center px-4">
+          {/* Input */}
+          <div className="flex flex-1 items-center px-4 py-3">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="search all assets"
-              className="bg-transparent border-none text-white w-full focus:outline-none text-lg h-full placeholder-[#939393]"
+              placeholder="Search all assets"
+              className="bg-transparent border-none text-white w-full focus:outline-none text-base placeholder-[#939393]"
             />
           </div>
 
           {/* Search Button */}
-          <div className="flex items-center gap-1">
-            <img src="/btn.svg" alt="Search Type" className="w-12 h-11 mr-2" />
-            <button 
+          <div className="flex items-center justify-end px-4 py-2 sm:py-0 gap-2">
+            <img src="/btn.svg" alt="Search Type" className="w-10 h-10 hidden sm:block" />
+            <button
               type="submit"
-              className="bg-signup-gradient text-[#1E1E1E] flex items-center justify-center font-medium w-28 h-11 text-xs mr-[11px] rounded-[3px]"
+              className="bg-signup-gradient text-[#1E1E1E] font-medium text-xs sm:text-sm w-full px-4 py-2 rounded-md flex items-center gap-2"
             >
-              <Search className="w-4 h-4 mr-2" />
+              <Search className="w-4 h-4" />
               Search
             </button>
           </div>
         </form>
 
-        {/* Dropdown Menu */}
+        {/* Dropdown Options */}
         {showDropdown && (
-          <div className="absolute left-0 top-[68px] w-[171px] bg-[#1D1D1D] border border-[#939393] rounded-md shadow-lg z-50 overflow-hidden">
+          <div className="absolute left-0 top-full mt-2 w-full sm:w-[171px] bg-[#1D1D1D] border border-[#939393] rounded-md shadow-lg z-50">
             {assetTypes.map((asset) => (
               <div
                 key={asset.value}
-                className={`px-4 py-3 hover:bg-[#2D2D2D] cursor-pointer flex items-center gap-2 ${
-                  selectedAsset.value === asset.value ? "bg-[#2D2D2D]" : ""
-                }`}
                 onClick={() => handleAssetSelect(asset)}
+                className={`px-4 py-2 hover:bg-[#2D2D2D] flex items-center gap-2 cursor-pointer ${selectedAsset.value === asset.value ? "bg-[#2D2D2D]" : ""
+                  }`}
               >
                 {asset.icon}
-                <span className="text-white text-lg whitespace-nowrap">
-                  {asset.name}
-                </span>
+                <span className="text-white text-sm sm:text-base">{asset.name}</span>
               </div>
             ))}
           </div>

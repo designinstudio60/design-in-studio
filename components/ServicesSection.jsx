@@ -24,7 +24,7 @@ export default function ServicesSection() {
   const duplicatedServices = [...services, ...services];
 
   return (
-    <section className="w-full py-12 overflow-hidden relative mt-10">
+    <section className="w-full py-10 overflow-hidden relative ">
       <div className="group overflow-hidden">
         <div className="flex gap-5 animate-marquee whitespace-nowrap group-hover:paused">
           {duplicatedServices.map((service, index) => (

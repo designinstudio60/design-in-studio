@@ -15,7 +15,9 @@ export default function Navbar() {
 
   return (
     <nav className="w-full px-19 py-10 flex flex-row items-center justify-between gap-6">
+      
       {/* Logo */}
+
       <div className="w-[112px] h-8">
         <Link href="/">
           <img

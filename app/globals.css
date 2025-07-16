@@ -9,7 +9,7 @@
   @apply text-lg
 }
 .text-base {
-  @apply text-xs md:text-sm lg:text-base xl:text-xl font-medium text-white
+  @apply text-xs md:text-sm lg:text-base xl:text-xl font-normal text-white
 }
 
 

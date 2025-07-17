@@ -18,11 +18,11 @@ export default function PortfolioCommunity() {
       <div className="relative z-10 flex justify-between items-center w-full">
         {/* Left Container */}
         <div className="flex flex-col max-w-136 text-white">
-          <h2 className="text-4xl ">
+          <h2 className="heading-md  ">
             Join Design in studio{" "}
             <span className="heading-grediant">portfolio community</span>
           </h2>
-          <p className="text-base mt-5.25 ">
+          <p className="para-base mt-5.25 ">
             If you are new designer & creator we provide you a place to build your attractive portfolio
           </p>
           <button className="mt-8.75 w-31 h-10.75 text-[#1E1E1E] rounded-[5px] bg-signup-gradient text-base signup-btn-gradient">

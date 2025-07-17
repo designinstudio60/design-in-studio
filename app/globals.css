@@ -10,20 +10,51 @@
 }
 
 .heading-lg {
-  @apply text-5xl;
+  @apply font-medium tracking-tight text-3xl md:text-4xl lg:text-5xl leading-[1.4] md:leading-[1.3] lg:leading-[1.3];
 }
 
 .heading-md {
-  @apply text-4xl;
+  @apply font-medium tracking-tight text-2xl md:text-3xl lg:text-4xl leading-[1.3] md:leading-[1.4] lg:leading-[1.3];
 }
-.para-xl{
+.heading-3xl {
+  @apply font-medium tracking-tight text-xl md:text-2xl lg:text-3xl leading-[1.2] md:leading-[1.3] lg:leading-[1.4];
+}
 
+.heading-2xl {
+  @apply font-medium tracking-tight text-lg md:text-xl lg:text-2xl leading-[1.1] md:leading-[1.2] lg:leading-[1.3];
 }
-.para-lg{
 
+.heading-xl {
+  @apply font-medium tracking-tight text-base md:text-lg lg:text-xl leading-[1.1] md:leading-[1.1] lg:leading-[1.2];
 }
-.para-md{
-  
+
+
+.text-large {
+  @apply font-normal tracking-normal text-base leading-snug; 
+  @apply md:text-lg md:leading-snug;  
+}
+.para-base {
+  @apply text-xs md:text-sm lg:text-base xl:text-xl font-normal text-white
+}
+
+.para-xs {
+  @apply font-normal tracking-normal text-xs leading-none;
+}
+
+.para-sm {
+  @apply font-normal tracking-normal text-sm leading-none;
+}
+
+.para-base {
+  @apply font-normal tracking-normal text-sm leading-tight;  
+  @apply md:text-base md:leading-snug;                      
+}
+
+
+
+.para-xl {
+  @apply font-normal tracking-normal text-lg leading-snug;  
+  @apply md:text-xl md:leading-normal;                     
 }
 
 }

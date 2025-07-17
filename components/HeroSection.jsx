@@ -58,7 +58,7 @@ export default function HeroSection({ heading, subheading }) {
     <section className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40  py-6 font-['Helvetica_Neue']">
       {/* Heading */}
       <div className="flex items-center justify-center px-4 text-center">
-        <div className="text-yellow-300 heading-main">
+        <div className="heading-main">
           {heading ? (
             heading
           ) : (
@@ -75,7 +75,7 @@ export default function HeroSection({ heading, subheading }) {
 
       {/* Subheading */}
       {subheading && (
-        <p className="text-white text-center mt-4 max-w-3xl mx-auto text-base">
+        <p className="text-white text-center mt-4 max-w-3xl mx-auto para-base">
           {subheading}
         </p>
       )}

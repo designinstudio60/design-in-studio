@@ -60,12 +60,12 @@ const BgRemoverSection = () => {
 
       {/* Right Section */}
       <div className="w-123.75 h-97.5 flex flex-col justify-center">
-        <h1 className="text-4xl  w-full mb-12 text-white">
+        <h1 className="heading-md  w-full mb-12 text-white">
           The ultimate <span className="text-transparent bg-clip-text heading-grediant">background</span><br />
           <span className="text-transparent bg-clip-text heading-grediant">Remover</span> tool you'll ever need
         </h1>
         
-        <p className="text-base mb-12">
+        <p className="para-base mb-12">
           With Design In Studio's online background remover, removing backgrounds from photos has never been easier. This free tool lets you erase backgrounds in just a few clicks—no need to install or learn complicated editing software. Simply upload your image, and get a background-free PNG in seconds.
         </p>
         
